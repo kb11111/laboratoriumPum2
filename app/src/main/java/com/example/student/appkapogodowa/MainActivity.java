@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         przycisk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            
+
             }
         });
 
