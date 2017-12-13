@@ -58,12 +58,24 @@ tools:context="com.example.student.appkapogodowa.MainActivity">
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        
         />
     <Button
         android:id="@+id/btn_zmienMiejsce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zmień miejsce"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+
+        />
+    <Button
+        android:id="@+id/btn_lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pokaż listę dostępnych miejsc"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
 
         />
 </LinearLayout>
