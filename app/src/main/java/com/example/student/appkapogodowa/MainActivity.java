@@ -1,5 +1,6 @@
 package com.example.student.appkapogodowa;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,18 +15,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText zmien = findViewById(R.id.Et_WpiszMiasto);
+        final EditText zmien = findViewById(R.id.Et_WpiszMiasto);
         Button przycisk = findViewById(R.id.btn_zmienMiejsce);
-        TextView miasto =  findViewById(R.id.txtv_NazwaMiasta);
+        Button lista = findViewById(R.id.btn_lista);
+        final TextView miasto =  findViewById(R.id.txtv_NazwaMiasta);
 
 
         przycisk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            String nowe = zmien.getText().toString();
+            miasto.setText(nowe);
             }
         });
 
+    
     }
 
 }
