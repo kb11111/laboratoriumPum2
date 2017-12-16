@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final EditText zmien = findViewById(R.id.Et_WpiszMiasto);
-        Button przycisk = findViewById(R.id.btn_zmienMiejsce);
+        final Button przycisk = findViewById(R.id.btn_zmienMiejsce);
         Button lista = findViewById(R.id.btn_lista);
         final TextView miasto =  findViewById(R.id.txtv_NazwaMiasta);
 
@@ -34,8 +34,13 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View view) {
                Intent intent = new Intent( MainActivity.this, Main2Activity.class);
                startActivity(intent);
+               Bundle bundle = new Bundle();
+               bundle.putString("zmien","miasto");
+               intent.putExtras(bundle);
+
            }
        });
+
 
 
     }
