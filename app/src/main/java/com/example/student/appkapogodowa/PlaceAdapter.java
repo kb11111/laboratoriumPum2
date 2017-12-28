@@ -36,12 +36,12 @@ import butterknife.OnClick;
             return new ViewHolder(itemLayoutView);
         }
 
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.setPlace_name(places.get(position).getPlaceName());
-            holder.setInfo(places.get(position).getInformation() + "");
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.setPlaceName(places.get(position).getPlaceName());
+        holder.setInfo(places.get(position).getInformation() + "");
 
-        }
+    }
 
     @Override
     public int getItemCount() {
@@ -49,24 +49,29 @@ import butterknife.OnClick;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
             @BindView(R.id.place_name)
-            String place_name;
+            TextView place_name;
 
             @BindView(R.id.info)
-            String info;
+            TextView info;
+
+
+
+
         @OnClick(R.id.place_select)
         void selectPlace() {
 
             openAlertDialog();
         }
 
-        public void setPlace_name(String place_name) {
-            this.place_name = place_name;
-        }
 
-        public void setInfo(String info) {
-            this.info = info;
-        }
+
+
+
+
+
+
 
         private void openAlertDialog() {
             AlertDialog.Builder builder;
@@ -95,5 +100,13 @@ import butterknife.OnClick;
                 super(itemView);
                 ButterKnife.bind(this, itemView);
             }
+        private void setPlaceName(String placeName) {
+           place_name.setText(placeName);
         }
+
+
+        public void setInfo(String information) {
+            info.setText(information);
+        }
+    }
     }
