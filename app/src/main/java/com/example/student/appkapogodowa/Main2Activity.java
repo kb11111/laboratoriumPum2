@@ -30,8 +30,9 @@ public class Main2Activity extends AppCompatActivity {
         txtv_result.setText(przekazanytekst);
 
        ArrayList<Place> places = new ArrayList<>();
-        places.add(new Place("Zawiercie", 5,"tu mieszkam"));
-        places.add(new Place("Gliwice", 6,"tu jest polsl"));
+        places.add(new Place("Warszawa", 5,"Stolica Polski"));
+        places.add(new Place("Zakopane", 3,"Tatry"));
+        places.add(new Place("Gliwice", 6,"Politechnika Śląska"));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);

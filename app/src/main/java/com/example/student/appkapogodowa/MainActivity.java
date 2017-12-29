@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.txtv_NazwaMiasta)
     TextView txtv_NazwaMiasta ;
 
+    @BindView(R.id.obrazek)
+    ImageView obrazek;
 
     @OnClick(R.id.btn_zmienMiejsce)
     void onClick(View view){
@@ -47,37 +52,22 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    private void LoadImage(){
+String intentUrl = "http://www.autokomisy.gniezno.pl/blog/obrazy/podstrony/pogoda_gniezno1.jpg";
+        Glide.with(this)
+                .load(intentUrl)
+                .into(obrazek);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        //final EditText zmien = findViewById(R.id.Et_WpiszMiasto);
-       // final Button przycisk = findViewById(R.id.btn_zmienMiejsce);
-        //Button lista = findViewById(R.id.btn_lista);
-       // final TextView miasto =  findViewById(R.id.txtv_NazwaMiasta);
 
 
-       // przycisk.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-         //   public void onClick(View view) {
-         //       String nowe = zmien.getText().toString();
-        //        miasto.setText(nowe);
-        //    }
-       // });
 
-       // lista.setOnClickListener(new View.OnClickListener() {
-           // @Override
-          //  public void onClick(View view) {
-              //  Intent intent = new Intent( MainActivity.this, Main2Activity.class);
-              //  startActivity(intent);
-               // Bundle bundle = new Bundle();
-               // bundle.putString("zmien","miasto");
-              //  intent.putExtras(bundle);
-
-       //     }
-      //  });
 
 
 
