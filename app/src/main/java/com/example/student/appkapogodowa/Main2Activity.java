@@ -1,15 +1,18 @@
 package com.example.student.appkapogodowa;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -18,6 +21,7 @@ public class Main2Activity extends AppCompatActivity {
 
     @BindView(R.id.txtv_result)
     TextView txtv_result ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,5 +43,9 @@ public class Main2Activity extends AppCompatActivity {
 
         PlaceAdapter placeAdapter = new PlaceAdapter(places);
         recyclerView.setAdapter(placeAdapter);
+
+
+
     }
+
 }
