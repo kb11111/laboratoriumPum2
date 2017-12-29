@@ -40,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
     void onClick2(View view){
 
         Intent intent = new Intent( MainActivity.this, Main2Activity.class);
-        startActivity(intent);
         Bundle bundle = new Bundle();
-        bundle.putString("noweKEY", String.valueOf(txtv_NazwaMiasta));
+        String wpisanyTekst = Et_WpiszMiasto.getText().toString();
+        bundle.putString("KEY", wpisanyTekst);
         intent.putExtras(bundle);
+        startActivity(intent);
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

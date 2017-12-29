@@ -23,10 +23,9 @@
         android:textSize="15dp" />
 
     <TextView
-        android:id="@+id/txtv_AktualnaLista"
+        android:id="@+id/txtv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista aktualnie jest nie dostępna"
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_marginVertical="5dp"
