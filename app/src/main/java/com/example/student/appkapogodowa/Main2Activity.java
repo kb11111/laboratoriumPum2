@@ -13,8 +13,8 @@ import butterknife.ButterKnife;
 
 public class Main2Activity extends AppCompatActivity {
 
-    //@BindView(R.id.recyclerView)
-  //  RecyclerView recyclerView;
+    @BindView(R.id.recyclerView)
+   RecyclerView recyclerView;
 
     @BindView(R.id.txtv_result)
     TextView txtv_result ;
@@ -29,14 +29,14 @@ public class Main2Activity extends AppCompatActivity {
         String przekazanytekst = przekazanedane.getString("KEY");
         txtv_result.setText(przekazanytekst);
 
-      //  ArrayList<Place> places = new ArrayList<>();
-      //  places.add(new Place("Zawiercie", 5,"tu mieszkam"));
-       // places.add(new Place("Gliwice", 6,"tu jest polsl"));
+       ArrayList<Place> places = new ArrayList<>();
+        places.add(new Place("Zawiercie", 5,"tu mieszkam"));
+        places.add(new Place("Gliwice", 6,"tu jest polsl"));
 
-       // RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        //recyclerView.setLayoutManager(layoutManager);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
 
-       // PlaceAdapter placeAdapter = new PlaceAdapter(places);
-       // recyclerView.setAdapter(placeAdapter);
+        PlaceAdapter placeAdapter = new PlaceAdapter(places);
+        recyclerView.setAdapter(placeAdapter);
     }
 }
