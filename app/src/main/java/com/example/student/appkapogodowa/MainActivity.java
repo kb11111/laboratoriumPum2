@@ -52,18 +52,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    private void LoadImage(){
-String intentUrl = "http://www.autokomisy.gniezno.pl/blog/obrazy/podstrony/pogoda_gniezno1.jpg";
-        Glide.with(this)
-                .load(intentUrl)
-                .into(obrazek);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        Glide.with(this)
+               .load("https://vignette.wikia.nocookie.net/unhalo/images/0/0c/POLSKA%21%21%21%21.png/revision/latest?cb=20130223002948")
+                .into(obrazek);
 
 
 

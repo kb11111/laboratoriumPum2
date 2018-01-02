@@ -52,7 +52,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
         @BindView(R.id.info)
         TextView info;
 
-    
+
 
 
         public ViewHolder(View itemView) {
