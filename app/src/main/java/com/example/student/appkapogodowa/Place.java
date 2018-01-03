@@ -33,9 +33,9 @@ public class Place {
         this.information = information;
     }
 
-    public Place(String placeName, int temperature, String information) {
+    public Place(String placeName,  String information) {
         this.placeName = placeName;
-        this.temperature = temperature;
+
         this.information = information;
     }
 }

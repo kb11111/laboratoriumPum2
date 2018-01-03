@@ -67,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        Intent getData = getIntent();
+        Bundle bundle = getIntent().getExtras();
+
+
+        if (bundle != null) {
+            String place = bundle.getString("Nazwa");
+            txtv_NazwaMiasta.setText(place);
+        }
+
 
 
 
