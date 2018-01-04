@@ -36,6 +36,7 @@ public class Main2Activity extends AppCompatActivity {
        ArrayList<Place> places = new ArrayList<>();
         places.add(new Place("Warszawa","Stolica Polski"));
         places.add(new Place("Zakopane","Tatry"));
+        places.add(new Place("Gdynia","Port"));
         places.add(new Place("Gliwice","Politechnika Śląska"));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());

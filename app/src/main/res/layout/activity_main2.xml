@@ -12,24 +12,26 @@
     tools:context="com.example.student.appkapogodowa.Main2Activity">
 
     <TextView
-        android:id="@+id/txtv_tekst"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="200dp"
-        android:gravity="center"
-        android:text="Kliknąłeś w listę miejsc"
-        android:textColor="@android:color/white"
-        android:textSize="15dp" />
-
-    <TextView
         android:id="@+id/txtv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_marginVertical="5dp"
-        android:textSize="15dp"/>
+        android:textSize="25dp"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/txtv_tekst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Kliknąłeś w listę miejsc"
+        android:textColor="@android:color/white"
+        android:textSize="15dp" />
+
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
