@@ -6,40 +6,76 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.Et_WpiszMiasto)
+    EditText Et_WpiszMiasto ;
+
+    @BindView(R.id.btn_zmienMiejsce)
+    Button btn_zmienMiejsce ;
+
+    @BindView(R.id.btn_lista)
+    Button btn_lista ;
+
+    @BindView(R.id.txtv_NazwaMiasta)
+    TextView txtv_NazwaMiasta ;
+
+    @BindView(R.id.obrazek)
+    ImageView obrazek;
+
+    @OnClick(R.id.btn_zmienMiejsce)
+    void onClick(View view){
+
+        String nowe = Et_WpiszMiasto.getText().toString();
+        txtv_NazwaMiasta.setText(nowe);
+    }
+
+
+
+    @OnClick(R.id.btn_lista)
+    void onClick2(View view){
+
+        Intent intent = new Intent( MainActivity.this, Main2Activity.class);
+        Bundle bundle = new Bundle();
+        String wpisanyTekst = Et_WpiszMiasto.getText().toString();
+        bundle.putString("KEY", wpisanyTekst);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        final EditText zmien = findViewById(R.id.Et_WpiszMiasto);
-        final Button przycisk = findViewById(R.id.btn_zmienMiejsce);
-        Button lista = findViewById(R.id.btn_lista);
-        final TextView miasto =  findViewById(R.id.txtv_NazwaMiasta);
+        Glide.with(this)
+               .load("https://vignette.wikia.nocookie.net/unhalo/images/0/0c/POLSKA%21%21%21%21.png/revision/latest?cb=20130223002948")
+                .into(obrazek);
 
 
-        przycisk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            String nowe = zmien.getText().toString();
-            miasto.setText(nowe);
-            }
-        });
 
-       lista.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent = new Intent( MainActivity.this, Main2Activity.class);
-               startActivity(intent);
-               Bundle bundle = new Bundle();
-               bundle.putString("zmien","miasto");
-               intent.putExtras(bundle);
 
-           }
-       });
+        Intent getData = getIntent();
+        Bundle bundle = getIntent().getExtras();
+
+
+        if (bundle != null) {
+            String place = bundle.getString("Nazwa");
+            txtv_NazwaMiasta.setText(place);
+        }
+
 
 
 
